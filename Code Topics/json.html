@@ -40,7 +40,7 @@
 			}
 
 			//Converts JavaScript Object into a String
-			function serializeJSON(){
+			function stringifyJSON(){
 				document.getElementById("Display People").innerHTML = JSON.stringify(people);
 			}
 
@@ -67,8 +67,8 @@
         <div class="center">
 		<h2> People Created </h2>
 		<p name="people" id="Display People"><p>
-		<button type="button" value="submit" onclick="parseJSON()">De-serialize</button>
-		<button type="button" value="submit" onclick="serializeJSON()">Serialize</button>
+		<button type="button" value="submit" onclick="parseJSON()">Parse</button>
+		<button type="button" value="submit" onclick="stringifyJSON()">Stringify</button>
         </div>
         </div>
         <hr>
