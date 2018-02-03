@@ -22,22 +22,66 @@
         
     <div class="main">       
     <div class="half">
-    <h2>JavaScript For Loop - Example</h2>
-        <p>This loops through counting five times.</p>
-        <button onclick="loopFunction()">Press me!</button>
+    <h2>JavaScript Object Funtion - Example</h2>
+        <p>This example will create a JavaScript Object using an object literal.</p>
+        <button onclick="objectFunction()">Press me!</button>
         <p id="example1"></p>
         <script>
-            function loopFunction() { 
-            var text = "";
-            var i;
-            for (i = 0; i < 5; i++) {
-            text += "The number is " + i + "<br>";
-            }
-            document.getElementById("example1").innerHTML = text;
+            function objectFunction() {
+            var person = {
+                firstName : "Paul",
+                lastName  : "Darr",
+                age       : 37,
+                eyeColor  : "brown"
+                };
+
+                document.getElementById("example1").innerHTML =
+                person.firstName + " is " + person.age + " years old and has " + person.eyeColor + " eyes. ";
             }
         </script>
         </div>
         
+     <div class="half">
+     <h2>JavaScript Properties - Example</h2>
+        <p>This example will add a new property to the object</p>
+        <button onclick="propertyFunction()">Press me!</button>
+        <p id="example2"></p>
+        <script>
+            function propertyFunction() {
+            var person = {
+                firstName : "Paul",
+                lastName  : "Darr",
+                age       : "37",
+                eyeColor  : "brown"
+                };
+                person.height = "67";
+                document.getElementById("example2").innerHTML =
+                person.firstName + " is " + person.age + " years old and has " + person.eyeColor + " eyes and is " + person.height + " inches tall.";
+            }
+        </script>
+        </div>
+        
+     <div class="half">
+     <h2>JavaScript Methods - Example</h2>
+        <p>This example will add a new method to the object using a nested function.</p>
+        <button onclick="methodFunction()">Press me!</button>
+        <p id="example3"></p>
+        <script>
+            function methodFunction() {
+            var person = {
+                firstName : "Paul",
+                lastName  : "Darr",
+                age       : "37",
+                eyeColor  : "brown"
+                };
+            person.name = function() {
+                return this.firstName + " " + this.lastName;
+                };
+                document.getElementById("example3").innerHTML =
+                "The creator of this website is: " + person.name();
+                }
+        </script>
+        </div>          
 
         </div>
         
