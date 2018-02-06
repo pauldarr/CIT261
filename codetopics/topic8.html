@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JSON Example Page">
+    <meta name="author" content="Paul Darr">
+    <link rel="icon" href="/resources/images/favicon.ico">
+            
+    <title>CSS Transitions and Animations - Paul Darr</title>
+    
+    <!-- Custom style for this site -->
+    <link href="/resources/css/main.css" rel="stylesheet">
+      
+    <!-- Normalize CSS -->
+    <link href="/resources/css/normalize.css" rel="stylesheet">
+      
+    <!-- JavaScript -->  
+    <script type="text/javascript">
+
+		</script>
+    <style>
+        .example1{
+        width: 100px;
+        height: 100px;
+        background: red;
+        transition: width 2s;
+        transition-delay: 0.5s;
+        }
+
+        .example1:hover{
+        background: blue;
+        width: 200px;
+        }
+        
+        div#example2{
+        width: 100px;
+        height: 100px;
+        background: red;
+        }
+        
+        .example3 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation-name: example3;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        }
+        @keyframes example3 {
+        0%   {background-color:red; left:0px; top:0px;}
+        25%  {background-color:yellow; left:100px; top:0px;}
+        50%  {background-color:blue; left:100px; top:100px;}
+        75%  {background-color:green; left:0px; top:100px;}
+        100% {background-color:red; left:0px; top:0px;}
+        }
+        
+        div#example4 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        }
+        @keyframes example4 {
+        0%   {background-color:red; left:0px; top:0px;}
+        25%  {background-color:yellow; left:100px; top:0px;}
+        50%  {background-color:blue; left:100px; top:100px;}
+        75%  {background-color:green; left:0px; top:100px;}
+        100% {background-color:red; left:0px; top:0px;}
+        }
+      </style>
+      
+      <script>
+        function transitionTwo(el,clr,elong) {
+	    var elem = document.getElementById(el);
+	    elem.style.transition = "background 2s linear 0.5s";
+	    elem.style.background = clr;
+        elem.style.width = elong;
+        }
+      </script>
+      
+      <script>
+        function animationTwo(el) {
+	    var elem = document.getElementById(el);
+	    elem.style.animation = "example4 4s infinite";
+        }
+      </script>
+	</head>
+    
+	<body>
+		<header>
+		<h1><a href="http://cit261.darr.org" title="Home Page">Home</a> | CSS Transitions and Animations </h1>
+		</header>
+        <hr>
+    <div class="main">
+        <div class="half">
+            <h2>Hover over the div element below.</h2>
+            <div class="example1"></div>
+        </div>
+        <div class="half">
+            <h2>Click the button below to trigger the transition.</h2>
+            <div id="example2"></div>
+            <button onclick="transitionTwo('example2','#0000FF','200px')">Click!</button>
+        </div> 
+        <div class="half">
+		    <h2>This is an example of an animation.</h2>
+            <div class="example3"></div>
+        </div>
+        <div class="half">
+            <h2>Click the button below to trigger the annimation.</h2>
+            <button onclick="animationTwo('example4')">Click!</button>
+            <div id="example4"></div>
+        </div> 
+        </div>
+        <footer>
+          <hr>
+          &copy; 2018 | Paul Darr | CIT 261: Mobile Software Development | <a href="https://github.com/pauldarr/CIT261/">Github</a> | <a href="http://cit261.darr.org/teamproject/">Team Project</a>
+       </footer>
+	</body>
+</html>
