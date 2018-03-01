@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JSON Example Page">
+    <meta name="author" content="Paul Darr">
+    <link rel="icon" href="/resources/images/favicon.ico">
+            
+    <title>JavaScript Events Especially for Mobile Devices (onTouchBegin) and Animation and Transition Events Example - Paul Darr</title>
+    
+    <!-- Custom style for this site -->
+    <link href="/resources/css/main.css" rel="stylesheet">
+      
+    <!-- Normalize CSS -->
+    <link href="/resources/css/normalize.css" rel="stylesheet">
+      
+    <script>
+        var container = document.querySelector('.container');
+        container.addEventListener('touchstart',function(e){
+            alert('Congrats! Touch Successful!');
+        },false);
+    </script>
+      
+	</head>
+    
+	<body>
+		<header>
+		<h1><a href="http://cit261.darr.org" title="Home Page">Home</a> | JavaScript Events Especially for Mobile Devices (onTouchBegin) and Animation and Transition Events Example </h1>
+		</header>
+        <hr>
+    <div class="main">
+        <div class="left">
+        <div class="container">Touch this line to get an alert! (Requires mobile emulator)</div>
+        </div>
+        
+        <div class="center">
+        </div>
+        </div>
+        <hr>
+        <footer>
+          &copy; 2018 | Paul Darr | CIT 261: Mobile Software Development | <a href="https://github.com/pauldarr/CIT261/">Github</a> | <a href="http://cit261.darr.org/teamproject/">Team Project</a>
+       </footer>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JSON Example Page">
+    <meta name="author" content="Paul Darr">
+    <link rel="icon" href="/resources/images/favicon.ico">
+            
+    <title>Local Storage Storing and Retrieving Arrays, Associative Arrays, and Objects Example - Paul Darr</title>
+    
+    <!-- Custom style for this site -->
+    <link href="/resources/css/main.css" rel="stylesheet">
+      
+    <!-- Normalize CSS -->
+    <link href="/resources/css/normalize.css" rel="stylesheet">
+      
+    <script>
+            var forte = {"Name: ":"Forte", "Manufacturer: ":"Kia", "Color: ":"Black", "Year: ":"2016", "Condition: ":"New"};
+            //local storage
+            store1 = JSON.stringify(forte);
+            localStorage.setItem("Forte", store1);
+            
+            var fusion = {"Name: ":"Fusion", "Manufacturer: ":"Ford", "Color: ":"Grey", "Year: ":"2013", "Condition: ":"Good"};
+            //local storage
+            store2 = JSON.stringify(fusion);
+            localStorage.setItem("Fusion", store2);
+            
+            var corolla = {"Name: ":"Corolla", "Manufacturer: ":"Toyota", "Color: ":"Red", "Year: ":"2015", "Condition: ":"Great"};
+            //local storage
+            store3 = JSON.stringify(corolla);
+            localStorage.setItem("Corolla", store3);
+            
+            function change ()
+            {
+                document.getElementById("display").innerHTML = " ";
+                var selected = document.getElementById("cars");
+                var value = selected.options[selected.selectedIndex].value;
+                if (value == "1") {
+                    for (x in forte) {
+                        document.getElementById("display").innerHTML += x + forte[x] +"<br>";
+                    }
+                }
+                if (value == "2") {
+                    for (x in fusion) {
+                        document.getElementById("display").innerHTML += x + fusion[x] +"<br>";
+                    }
+                }
+                if (value == "3") {
+                    for (x in corolla) {
+                        document.getElementById("display").innerHTML += x + corolla[x] +"<br>";
+                    }
+                }
+            }
+	</script>
+      
+	</head>
+    
+	<body>
+		<header>
+		<h1><a href="http://cit261.darr.org" title="Home Page">Home</a> | Local Storage Storing and Retrieving Arrays, Associative Arrays, and Objects Example </h1>
+		</header>
+        <hr>
+    <div class="main">
+        <div class="left">
+        <h3>Pick a car to view its information:</h3>
+        <select id="cars" onChange="change();">
+            <option value="0">- SELECT -</option>
+            <option value="1">Forte</option>
+            <option value="2">Fusion</option>
+            <option value="3">Corolla</option>
+        </select>
+        <div id="display"></div>
+        <div id="displayChange"></div>
+        </div>
+        </div>
+        
+        <hr>
+        <footer>
+          &copy; 2018 | Paul Darr | CIT 261: Mobile Software Development | <a href="https://github.com/pauldarr/CIT261/">Github</a> | <a href="http://cit261.darr.org/teamproject/">Team Project</a>
+       </footer>
+	</body>
+</html>

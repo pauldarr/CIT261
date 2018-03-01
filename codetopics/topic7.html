@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JSON Example Page">
+    <meta name="author" content="Paul Darr">
+    <link rel="icon" href="/resources/images/favicon.ico">
+            
+    <title>Manipulating CSS Class Properties Using JavaScript Example - Paul Darr</title>
+    
+    <!-- Custom style for this site -->
+    <link href="/resources/css/main.css" rel="stylesheet">
+      
+    <!-- Normalize CSS -->
+    <link href="/resources/css/normalize.css" rel="stylesheet">
+      
+    <script type="text/javascript">
+
+			var Person = function(firstname){
+				this.firstname = firstname;
+			}
+			var people = [];
+
+			function newPerson(){
+				var person1 = new Person(document.person.name.value);
+				//Add person to the list of people
+				people.push(person1);
+				//Display individual
+				document.getElementById("Display Person").innerHTML = JSON.stringify(person1);
+				//Display people
+				document.getElementById("Display People").innerHTML = JSON.stringify(people);
+			}
+
+			//Converts JSON into JavaScript Object
+			function parseJSON(){
+				var string = document.getElementById("Display People").innerHTML;
+				document.getElementById("Display People").innerHTML = JSON.parse(string);
+			}
+
+			//Converts JavaScript Object into a String
+			function stringifyJSON(){
+				document.getElementById("Display People").innerHTML = JSON.stringify(people);
+			}
+
+		</script>
+	</head>
+    
+	<body>
+		<header>
+		<h1><a href="http://cit261.darr.org" title="Home Page">Home</a> | Manipulating CSS Class Properties Using JavaScript Example </h1>
+		</header>
+        <hr>
+    <div class="main">
+        <div class="left">
+		<h2> Create a Person: </h2>
+        <p>Enter a name to add a person to the list.</p>    
+		<p id="Display Person"></p>
+		<form name="person">
+			<label>First Name:</label>
+			<input type="text" id="name" name="name"/><br>
+			</select><br>
+			<button type="button" value="submit" onclick="newPerson()">Create Person</button>
+		</form>
+
+        </div>
+        <div class="center">
+		<h2> People Created </h2>
+        <p>You can add as many names to the list as you wish. Parse will convert to object and stringify back to the name.</p>
+		<p name="people" id="Display People"><p>
+		<button type="button" value="submit" onclick="parseJSON()">Parse</button>
+		<button type="button" value="submit" onclick="stringifyJSON()">Stringify</button>
+        </div>
+        </div>
+        <hr>
+        <footer>
+          &copy; 2018 | Paul Darr | CIT 261: Mobile Software Development | <a href="https://github.com/pauldarr/CIT261/">Github</a> | <a href="http://cit261.darr.org/teamproject/">Team Project</a>
+       </footer>
+	</body>
+</html>

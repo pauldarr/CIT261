@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JSON Example Page">
+    <meta name="author" content="Paul Darr">
+    <link rel="icon" href="/resources/images/favicon.ico">
+            
+    <title>Using AJAX to Consume a JSON Web Service Example - Paul Darr</title>
+    
+    <!-- Custom style for this site -->
+    <link href="/resources/css/main.css" rel="stylesheet">
+      
+    <!-- Normalize CSS -->
+    <link href="/resources/css/normalize.css" rel="stylesheet">
+      
+    <script type="text/javascript">
+        function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("example1").innerHTML =
+        this.responseText;
+        }
+        };
+        xhttp.open("GET", "topic4.txt", true);
+        xhttp.send();
+        }
+	</script>
+	</head>
+    
+	<body>
+		<header>
+		<h1><a href="http://cit261.darr.org" title="Home Page">Home</a> | Using AJAX to Consume a JSON Web Service Example </h1>
+		</header>
+        <hr>
+    <div class="main">
+        <div class="left">
+		<h2>The XMLHttpRequest Object: </h2>
+        <p id="example1">Click the button to change content.</p>    
+            <button type="button" onclick="loadDoc()">Button</button>
+        </div>
+        
+        <hr>
+        <footer>
+          &copy; 2018 | Paul Darr | CIT 261: Mobile Software Development | <a href="https://github.com/pauldarr/CIT261/">Github</a> | <a href="http://cit261.darr.org/teamproject/">Team Project</a>
+       </footer>
+	</body>
+</html>
