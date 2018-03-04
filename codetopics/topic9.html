@@ -16,12 +16,93 @@
     <!-- Normalize CSS -->
     <link href="/resources/css/normalize.css" rel="stylesheet">
       
-    <script>
-        var container = document.querySelector('.container');
-        container.addEventListener('touchstart',function(e){
-            alert('Congrats! Touch Successful!');
-        },false);
-    </script>
+    <style>
+        div#example2{
+        width: 100px;
+        height: 100px;
+        background: red;
+        }
+        
+        div#example3 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        }
+        @keyframes example3 {
+        0%   {background-color:red; left:0px; top:0px;}
+        25%  {background-color:yellow; left:100px; top:0px;}
+        50%  {background-color:blue; left:100px; top:100px;}
+        75%  {background-color:green; left:0px; top:100px;}
+        100% {background-color:red; left:0px; top:0px;}
+        }
+        
+        .draggable-circle {
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        background-color: deepskyblue;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        z-index: 1000;
+        }
+      </style>
+      
+      <script>
+          function displayDate() {
+              document.getElementById("example1").innerHTML = Date();
+          }
+          
+          function transitionTwo(el,clr,elong) {
+              var elem = document.getElementById(el);
+              elem.style.transition = "background 2s linear 0.5s";
+              elem.style.background = clr;
+              elem.style.width = elong;
+          }
+          
+          function animationTwo(el) {
+              var elem = document.getElementById(el);
+              elem.style.animation = "example3 4s infinite";
+          }
+
+          function createDraggableCircle() {
+            var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+            console.log("w:", w, "h:", h);
+
+            var draggable_circle        = document.createElement('div');
+            draggable_circle.className  = "draggable-circle";
+            draggable_circle.style.left = ((w / 2) - 25) + "px";
+            draggable_circle.style.top  = ((h / 2) - 25) + "px";
+            draggable_circle.ondrag     = handleDrag;
+            draggable_circle.setAttribute('draggable', 'true');
+            draggable_circle.addEventListener('touchmove', handleTouchMove);
+            document.body.appendChild(draggable_circle);
+          }
+          
+          function handleDrag(event) {
+            var x = event.clientX;     // Get the horizontal coordinate
+            var y = event.clientY;     // Get the vertical coordinate
+
+            console.log("drag", x, y);
+
+            if (x && y) {
+            this.style.left = (x - 25) + "px";
+            this.style.top  = (y - 25) + "px";
+            }
+            }
+
+          function handleTouchMove(event) {
+            var touch = event.targetTouches[0];
+
+            // Place element where the finger is
+            this.style.left = touch.clientX-25 + 'px';
+            this.style.top = touch.clientY-25 + 'px';
+            event.preventDefault();
+          }
+      </script>
       
 	</head>
     
@@ -31,15 +112,33 @@
 		</header>
         <hr>
     <div class="main">
-        <div class="left">
-        <div class="container">Touch this line to get an alert! (Requires mobile emulator)</div>
+        <div class="half">
+        	<h2>Touch the button below to display the Date/Time via a JavaScript Function Call</h2>
+			<button ontouchstart="displayDate()">The time is?</button>
+            <p>Requires mobile device or emulator.</p>
+            <p id="example1"></p>
         </div>
         
-        <div class="center">
+        <div class="half">
+            <h2>Touch the button below to trigger the transition.</h2>
+            <div id="example2"></div>
+            <button ontouchstart="transitionTwo('example2','#0000FF','200px')">Touch!</button>
         </div>
+        
+        <div class="half">
+            <h2>Touch the button below to trigger the annimation.</h2>
+            <button ontouchstart="animationTwo('example3')">Touch!</button>
+            <div id="example3"></div>
         </div>
-        <hr>
+        
+        <div class="half">
+            <p>Touch the button below to create a circle that you can drag around the screen with your touch device!</p>
+			<button ontouchstart="createDraggableCircle()">Click me to create a circle.</button>
+        </div> 
+        
+        </div>
         <footer>
+          <hr>
           &copy; 2018 | Paul Darr | CIT 261: Mobile Software Development | <a href="https://github.com/pauldarr/CIT261/">Github</a> | <a href="http://cit261.darr.org/teamproject/">Team Project</a>
        </footer>
 	</body>

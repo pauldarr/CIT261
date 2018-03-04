@@ -17,33 +17,12 @@
     <link href="/resources/css/normalize.css" rel="stylesheet">
       
     <script type="text/javascript">
-
-			var Person = function(firstname){
-				this.firstname = firstname;
-			}
-			var people = [];
-
-			function newPerson(){
-				var person1 = new Person(document.person.name.value);
-				//Add person to the list of people
-				people.push(person1);
-				//Display individual
-				document.getElementById("Display Person").innerHTML = JSON.stringify(person1);
-				//Display people
-				document.getElementById("Display People").innerHTML = JSON.stringify(people);
-			}
-
-			//Converts JSON into JavaScript Object
-			function parseJSON(){
-				var string = document.getElementById("Display People").innerHTML;
-				document.getElementById("Display People").innerHTML = JSON.parse(string);
-			}
-
-			//Converts JavaScript Object into a String
-			function stringifyJSON(){
-				document.getElementById("Display People").innerHTML = JSON.stringify(people);
-			}
-
+        function example3Canvas() {
+        var c = document.getElementById("example3");
+        var ctx = c.getContext("2d");
+        var img = document.getElementById("monalisa");
+        ctx.drawImage(img,10,10);
+        }
 		</script>
 	</head>
     
@@ -53,25 +32,34 @@
 		</header>
         <hr>
     <div class="main">
-        <div class="left">
-		<h2> Create a Person: </h2>
-        <p>Enter a name to add a person to the list.</p>    
-		<p id="Display Person"></p>
-		<form name="person">
-			<label>First Name:</label>
-			<input type="text" id="name" name="name"/><br>
-			</select><br>
-			<button type="button" value="submit" onclick="newPerson()">Create Person</button>
-		</form>
-
+        <div class="half">
+        	<h2>HTML5 Audio</h2>
+            <audio controls>
+                <source src="/resources/audio/1nephi.ogg" type="audio/ogg">
+                <source src="/resources/audio/1nephi.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
         </div>
-        <div class="center">
-		<h2> People Created </h2>
-        <p>You can add as many names to the list as you wish. Parse will convert to object and stringify back to the name.</p>
-		<p name="people" id="Display People"><p>
-		<button type="button" value="submit" onclick="parseJSON()">Parse</button>
-		<button type="button" value="submit" onclick="stringifyJSON()">Stringify</button>
+        <div class="half">
+        	<h2>HTML5 Video</h2>
+            <video width="320" height="240" poster="/resources/images/presentation.png" controls>
+            <source src="/resources/video/presentation.mp4" type="video/mp4">
+            </video>
         </div>
+        <div class="half">
+        	<h2>HTML5 image for Canvas</h2>
+            <img id="monalisa" src="/resources/images/monalisa.png" alt="Mona Lisa" width="250" height="380">
+        </div>
+            
+         <div class="half">   
+            <h2>HTML5 Canvas to fill:</h2>
+            <canvas id="example3" width="260" height="390"
+            style="border:1px solid #ffffff;">
+            Your browser does not support the HTML5 canvas tag.</canvas>
+            
+            <p>Click to fill canvas:</p>
+            <p><button onclick="example3Canvas()">Click!</button></p>
+        </div>       
         </div>
         <hr>
         <footer>
