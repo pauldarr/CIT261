@@ -8,7 +8,7 @@
     <meta name="author" content="Paul Darr">
     <link rel="icon" href="/resources/images/favicon.ico">
             
-    <title>Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries Example - Paul Darr</title>
+    <title>Designing, Defining, and Triggering CSS3 Animations without Custom Libraries Example - Paul Darr</title>
     
     <!-- Custom style for this site -->
     <link href="/resources/css/main.css" rel="stylesheet">
@@ -17,19 +17,17 @@
     <link href="/resources/css/normalize.css" rel="stylesheet">
       
     <style>
-        div#example1{
-        width: 200px;
-        height: 100px;
-        background: red;
-        }
+        td {
+            border: 1px solid black;
+            height: 50px;
+            width: 50px;
+            }
     </style>  
       
     <script type="text/javascript">
-        function transitionOne(el,clr,elong) {
+        function animationTwo(el) {
 	    var elem = document.getElementById(el);
-	    elem.style.transition = "background 2s linear 0.5s";
-	    elem.style.background = clr;
-        elem.style.width = elong;
+	    elem.style.animation = "example4 4s infinite";
         }
     </script>
       
@@ -37,19 +35,31 @@
     
 	<body>
 		<header>
-		<h1><a href="http://cit261.darr.org" title="Home Page">Home</a> | Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries Example </h1>
+		<h1><a href="http://cit261.darr.org" title="Home Page">Home</a> | Designing, Defining, and Triggering CSS3 Animations without Custom Libraries Example </h1>
         <hr>
 		</header>
     <div class="main">
         <div class="half">
-            <h2>Transition example 1.</h2>
-            <div id="example1" onclick="transitionOne('example1','#0000FF','300px')">
-                <p>Click the rectangle to trigger the transition.</p>
-            </div>
-        </div> 
-
-
-    </div>
+            <h2>Annimation example 1.</h2>
+                <table>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>            
+            </div> 
+        </div>
         <footer>
         <hr>
           &copy; 2018 | Paul Darr | CIT 261: Mobile Software Development | <a href="https://github.com/pauldarr/CIT261/">Github</a> | <a href="http://cit261.darr.org/teamproject/">Team Project</a>

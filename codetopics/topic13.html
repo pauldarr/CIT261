@@ -16,65 +16,48 @@
     <!-- Normalize CSS -->
     <link href="/resources/css/normalize.css" rel="stylesheet">
       
+    <style>
+        div#example4 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        }
+        @keyframes example4 {
+        0%   {background-color:red; left:0px; top:0px;}
+        25%  {background-color:yellow; left:100px; top:0px;}
+        50%  {background-color:blue; left:100px; top:100px;}
+        75%  {background-color:green; left:0px; top:100px;}
+        100% {background-color:red; left:0px; top:0px;}
+        }
+    </style>  
+      
     <script type="text/javascript">
-
-			var Person = function(firstname){
-				this.firstname = firstname;
-			}
-			var people = [];
-
-			function newPerson(){
-				var person1 = new Person(document.person.name.value);
-				//Add person to the list of people
-				people.push(person1);
-				//Display individual
-				document.getElementById("Display Person").innerHTML = JSON.stringify(person1);
-				//Display people
-				document.getElementById("Display People").innerHTML = JSON.stringify(people);
-			}
-
-			//Converts JSON into JavaScript Object
-			function parseJSON(){
-				var string = document.getElementById("Display People").innerHTML;
-				document.getElementById("Display People").innerHTML = JSON.parse(string);
-			}
-
-			//Converts JavaScript Object into a String
-			function stringifyJSON(){
-				document.getElementById("Display People").innerHTML = JSON.stringify(people);
-			}
-
-		</script>
+        function animationTwo(el) {
+	    var elem = document.getElementById(el);
+	    elem.style.animation = "example4 4s infinite";
+        }
+    </script>
+      
 	</head>
     
 	<body>
 		<header>
 		<h1><a href="http://cit261.darr.org" title="Home Page">Home</a> | Designing, Defining, and Triggering CSS3 Animations without Custom Libraries Example </h1>
-		</header>
         <hr>
+		</header>
     <div class="main">
-        <div class="left">
-		<h2> Create a Person: </h2>
-        <p>Enter a name to add a person to the list.</p>    
-		<p id="Display Person"></p>
-		<form name="person">
-			<label>First Name:</label>
-			<input type="text" id="name" name="name"/><br>
-			</select><br>
-			<button type="button" value="submit" onclick="newPerson()">Create Person</button>
-		</form>
+        <div class="half">
+            <h2>Annimation example 1.</h2>
+            <div id="example4"onclick="animationTwo('example4')">
+                <p>Click the rectangle to trigger the annimation.</p>
+            </div> 
+
 
         </div>
-        <div class="center">
-		<h2> People Created </h2>
-        <p>You can add as many names to the list as you wish. Parse will convert to object and stringify back to the name.</p>
-		<p name="people" id="Display People"><p>
-		<button type="button" value="submit" onclick="parseJSON()">Parse</button>
-		<button type="button" value="submit" onclick="stringifyJSON()">Stringify</button>
         </div>
-        </div>
-        <hr>
         <footer>
+        <hr>
           &copy; 2018 | Paul Darr | CIT 261: Mobile Software Development | <a href="https://github.com/pauldarr/CIT261/">Github</a> | <a href="http://cit261.darr.org/teamproject/">Team Project</a>
        </footer>
 	</body>

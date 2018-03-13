@@ -105,7 +105,7 @@ footer {
     flex-direction: column;
 }
 
-.left, .right {
+.left, .right, .center, .half {
         
 /* Return them to document order */
     order: 0;
