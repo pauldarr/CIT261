@@ -51,7 +51,7 @@
 
 /* Common */
 html, body {
-	min-width:960px;
+	max-width:766px;
 	margin:0;
 	padding:0;
 }
@@ -67,7 +67,33 @@ html, body {
 /* LAYOUT */
 .container2 {
 	margin:0 auto;
-	overflow:hidden;
+}
+
+@media screen and (max-width: 766px) {
+    #container2 {
+        flex: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+     #content-slider {
+        flex: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+     #slider {
+        flex: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+     #mask {
+        flex: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 /* CONTENT SLIDER */
