@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ESL Vocabulary">
+    <meta name="author" content="Paul Darr">
+    <link rel="icon" href="/resources/images/favicon.ico">
+            
+    <title>ESL Vocabulary</title>
+    
+    <!-- Custom style for this site -->
+    <link href="/resources/css/main.css" rel="stylesheet">
+      
+    <!-- Custom style for this page -->
+    <link href="/resources/css/individual.css" rel="stylesheet">
+      
+    <!-- Normalize CSS -->
+    <link href="/resources/css/normalize.css" rel="stylesheet">
+
+      
+<script>
+    function hamburgerFunction(x) {
+        x.classList.toggle("change");
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function domFlashcard() {
+            document.getElementById("myFrame").src = "flashcards.html";
+    }
+    
+    function domQuiz() {
+            document.getElementById("myFrame").src = "quiz.html";
+    }
+    
+    function domGame() {
+            document.getElementById("myFrame").src = "game.html";
+    }
+    
+    function domPractice() {
+            document.getElementById("myFrame").src = "morepractice.html";
+    }
+
+</script>
+      
+	</head>
+    
+	<body>
+		<header>
+            <div class="container" onclick="hamburgerFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="/individualproject/">Home</a>
+                    <a onclick="domFlashcard()">Flashcards</a>
+                    <a onclick="domQuiz()">Quiz</a>
+                    <a onclick="domGame()">Game</a>
+                    <a onclick="domPractice()">More Practice?</a>
+                </div>
+            </div>
+		<h1>ESL Vocabulary</h1>
+        <h4>English as a Second Language (ESL) Vocabulary Practice</h4>
+        <hr>
+		</header>
+  
+    <div class="main">
+        <div class="content">
+            <iframe id="myFrame" src="default.html"></iframe>
+        </div>
+    </div>
+
+
+
+        <footer>
+        <hr>
+          &copy; 2018 | Paul Darr | CIT 261: Mobile Software Development | <a href="https://github.com/pauldarr/CIT261/">Github</a> | <a href="http://cit261.darr.org/individualproject/">Individual Project</a>
+       </footer>
+	</body>
+</html>

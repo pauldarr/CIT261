@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Game">
+    <meta name="author" content="Paul Darr">
+    <link rel="icon" href="/resources/images/favicon.ico">
+            
+      <title>The Labirynth</title>
+    
+    <!-- Custom style for this site -->
+      <link href="/resources/css/main.css" rel="stylesheet">
+      
+    <!-- Normalize CSS -->
+      <link href="/resources/css/normalize.css" rel="stylesheet">
+
+    <!-- Custom style for this page -->
+      <link rel="stylesheet" href="/resources/css/reset.min.css">
+      <link rel="stylesheet" href="/resources/css/game.css">
+	</head>
+
+<body>
+  <div id="game">
+  <div class="corridor">
+    <div class="block right">
+      <div class="dash-r"></div>
+      <div class="info">Move your mouse along the green path. Don't touch outside the green path or your player will fall into the dark.</div>
+      <div class="corridor">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block right">
+          <div class="dash-r"></div>
+          <div class="corridor x width-240">
+            <div class="block obstacle-crush normal"></div>
+            <div class="block bottom">
+              <div class="dash-b"></div>
+              <div class="corridor">
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block left">
+                  <div class="dash-l"></div>
+                  <div class="corridor x width-240">
+                    <div class="block smallerY10"></div>
+                    <div class="block smallerY20"></div>
+                    <div class="block bottom">
+                      <div class="dash-b"></div>
+                      <div class="corridor">
+                        <div class="block right">
+                          <div class="dash-r"></div>
+                          <div class="corridor x width-400">
+                            <div class="block top">
+                              <div class="dash-t"></div>
+                              <div class="corridor">
+                                <div class="block right">
+                                  <div class="dash-r"></div>
+                                  <div class="corridor x width-160">
+                                    <div class="block">
+                                      <div class="goal"></div>
+                                      <div class="end-screen">
+                                        Congratulations!
+                                        <br /> You have reached the end! ;)
+                                      </div>
+                                    </div>
+                                    <div class="block"></div>
+                                  </div>
+                                </div>
+                                <div class="block smallerX10 obstacle-slide-most normal"></div>
+                                <div class="block smallerX20 obstacle-slide-more normal"></div>
+                                <div class="block smallerX40 obstacle-slide-normal obstacle-slide-normal normal"></div>
+                                <div class="block smallerX60 obstacle-slide-slight normal"></div>
+                                <div class="block"></div>
+                                <div class="block"></div>
+                              </div>
+                            </div>
+                            <div class="block smallerY40 top20px"></div>
+                            <div class="block obstacle-crush fast"></div>
+                            <div class="block smallerY40 top20px"></div>
+                            <div class="block"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="block top top-align-left">
+              <div class="dash-t"></div>
+              <div class="corridor">
+                <div class="block"></div>
+                <div class="block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Flashcards">
+    <meta name="author" content="Paul Darr">
+    <link rel="icon" href="/resources/images/favicon.ico">
+            
+        <title>Flippable flash cards - flip on click</title>
+    
+    <!-- Custom style for this site -->
+      <link href="/resources/css/main.css" rel="stylesheet">
+      
+    <!-- Normalize CSS -->
+      <link href="/resources/css/normalize.css" rel="stylesheet">
+
+    <!-- Custom style for this page -->
+    <link rel="stylesheet" href="/resources/css/flashcards.css">
+	</head>
+
+<body>
+
+  <div class="container">
+      
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div class="flippable flash1">
+        <div class="front">
+          <span>Mother</span>
+        </div>
+        <div class="back">
+          a female parent
+        </div>
+      </div>
+  </div>
+  
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div class="flippable flash2">
+        <div class="front">
+          <span>Father</span>
+        </div>
+        <div class="back">
+          a male parent
+        </div>
+      </div>
+  </div>
+      
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div class="flippable flash3">
+        <div class="front">
+          <span>Child</span>
+        </div>
+        <div class="back">
+          a young person
+        </div>
+      </div>
+  </div>
+  
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div class="flippable flash4">
+        <div class="front">
+          <span>Grandmother</span>
+        </div>
+        <div class="back">
+          the mother of your father or mother
+        </div>
+      </div>
+  </div>
+    
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div class="flippable flash5">
+        <div class="front">
+          <span>Grandfather</span>
+        </div>
+        <div class="back">
+          the father of your father or mother
+        </div>
+      </div>
+  </div>
+</div>
+<!--<div>
+    <button type="button" class="btn btn-lg btn-link button-glow">Link (no border or background)</button>
+ </div> -->
+    <script src='/resources/js/min.js'></script>
+    <script src="/resources/js/flashcards.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="More Practice">
+    <meta name="author" content="Paul Darr">
+    <link rel="icon" href="/resources/images/favicon.ico">
+            
+    <title>More Practice</title>
+    
+    <!-- Custom style for this site -->
+    <link href="/resources/css/main.css" rel="stylesheet">
+      
+    <!-- Normalize CSS -->
+    <link href="/resources/css/normalize.css" rel="stylesheet">
+      
+    <script>
+            var mother = {"Word: ":"Mother", "Definition: ":"a female parent"};
+            //local storage
+            store1 = JSON.stringify(mother);
+            localStorage.setItem("Mother", store1);
+            
+            var father = {"Word: ":"Father", "Definition: ":"a male parent"};
+            //local storage
+            store2 = JSON.stringify(father);
+            localStorage.setItem("Father", store2);
+            
+            var child = {"Word: ":"Child", "Definition: ":"a young person"};
+            //local storage
+            store3 = JSON.stringify(child);
+            localStorage.setItem("Child", store3);
+        
+            var grandmother = {"Word: ":"Grandmother", "Definition: ":"the mother of your father or mother"};
+            //local storage
+            store4 = JSON.stringify(grandmother);
+            localStorage.setItem("Grandmother", store4);
+        
+            var grandfather = {"Word: ":"Grandfather", "Definition: ":"the father of your father or mother"};
+            //local storage
+            store5 = JSON.stringify(grandfather);
+            localStorage.setItem("Grandfather", store5);
+            
+            function change ()
+            {
+                document.getElementById("display").innerHTML = " ";
+                var selected = document.getElementById("family");
+                var value = selected.options[selected.selectedIndex].value;
+                if (value == "1") {
+                    for (x in mother) {
+                        document.getElementById("display").innerHTML += x + mother[x] +"<br>";
+                    }
+                }
+                if (value == "2") {
+                    for (x in father) {
+                        document.getElementById("display").innerHTML += x + father[x] +"<br>";
+                    }
+                }
+                if (value == "3") {
+                    for (x in child) {
+                        document.getElementById("display").innerHTML += x + child[x] +"<br>";
+                    }
+                }
+                if (value == "4") {
+                    for (x in grandmother) {
+                        document.getElementById("display").innerHTML += x + grandmother[x] +"<br>";
+                    }
+                }
+                if (value == "5") {
+                    for (x in grandfather) {
+                        document.getElementById("display").innerHTML += x + grandfather[x] +"<br>";
+                    }
+                }
+            }
+	</script>
+      
+	</head>
+    
+	<body>
+		<header>
+		<h3>More Practice</h3>
+		</header>
+    <div class="main">
+        <div class="left">
+        <h4>Pick a word to see it's definition:</h4>
+        <select id="family" onChange="change();">
+            <option value="0">- SELECT -</option>
+            <option value="1">Mother</option>
+            <option value="2">Father</option>
+            <option value="3">Child</option>
+            <option value="4">Grandmother</option>
+            <option value="5">Grandfather</option>
+        </select>
+        <div id="display"></div>
+        <div id="displayChange"></div>
+        </div>
+        </div>
+        
+	</body>
+</html>
