@@ -8,48 +8,112 @@
     <meta name="author" content="Paul Darr">
     <link rel="icon" href="/resources/images/favicon.ico">
             
-    <title>Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries Example - Paul Darr</title>
+    <title>Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries Example - Paul Darr</title>
     
     <!-- Custom style for this site -->
     <link href="/resources/css/main.css" rel="stylesheet">
       
+    <!-- Custom style for this page -->
+    <link href="/resources/css/12.css" rel="stylesheet">
+      
     <!-- Normalize CSS -->
     <link href="/resources/css/normalize.css" rel="stylesheet">
+
       
-    <style>
-        div#example1{
-        width: 200px;
-        height: 100px;
-        background: red;
-        }
-    </style>  
-      
-    <script type="text/javascript">
-        function transitionOne(el,clr,elong) {
-	    var elem = document.getElementById(el);
-	    elem.style.transition = "background 2s linear 0.5s";
-	    elem.style.background = clr;
-        elem.style.width = elong;
-        }
-    </script>
+<script>
+function hamburgerFunction(x) {
+    x.classList.toggle("change");
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+</script>    
       
 	</head>
     
 	<body>
 		<header>
-		<h1><a href="http://cit261.darr.org" title="Home Page">Home</a> | Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries Example </h1>
+            <div class="container" onclick="hamburgerFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="/">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+		<h1>Paul's Notepad </h1>
+        <h4>Tech Geek, Political Geek and Gaming Geek</h4>
         <hr>
 		</header>
+
+    <div class="container2">
+	   <div id="content-slider">
+    	   <div id="slider">
+        	   <div id="mask">
+                    <ul>
+                    <li id="first" class="firstanimation">
+                    <a href="#">
+                    <img src="/resources/images/img_1.jpg" alt="Cougar"/>
+                    </a>
+                    <div class="tooltip">
+                    <h1>Cougar</h1>
+                    </div>
+                    </li>
+
+                    <li id="second" class="secondanimation">
+                    <a href="#">
+                    <img src="/resources/images/img_2.jpg" alt="Lions"/>
+                    </a>
+                    <div class="tooltip">
+                    <h1>Lions</h1>
+                    </div>
+                    </li>
+
+                    <li id="third" class="thirdanimation">
+                    <a href="#">
+                    <img src="/resources/images/img_3.jpg" alt="Snowalker"/>
+                    </a>
+                    <div class="tooltip">
+                    <h1>Snowalker</h1>
+                    </div>
+                    </li>
+
+                    <li id="fourth" class="fourthanimation">
+                    <a href="#">
+                    <img src="/resources/images/img_4.jpg" alt="Howling"/>
+                    </a>
+                    <div class="tooltip">
+                    <h1>Howling</h1>
+                    </div>
+                    </li>
+
+                    <li id="fifth" class="fifthanimation">
+                    <a href="#">
+                    <img src="/resources/images/img_5.jpg" alt="Sunbathing"/>
+                    </a>
+                    <div class="tooltip">
+                    <h1>Sunbathing</h1>
+                    </div>
+                    </li>
+                    </ul>
+                </div>
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>    
     <div class="main">
         <div class="half">
-            <h2>Transition example 1.</h2>
-            <div id="example1" onclick="transitionOne('example1','#0000FF','300px')">
-                <p>Click the rectangle to trigger the transition.</p>
-            </div>
-        </div> 
-
-
+            <h4>What is this example?</h4>
+            <p>This is a basic blog type webpage. It's a combination example that uses Transitions, Transformations, and Animations. The hamburger menu uses Transitions and transforms. The slideshow uses Transition and Animation all in CSS</p>
+        </div>
+        <div class="half">
+            <h4>What does it do?</h4>
+            <p>Click on the Menu Icon to transform it to "X" and bring down a menu. The home option is set for my home here. Hovering over the slideshow pauses it, displays a tooltip, and pauses the progress bar.</p>
+        </div>
     </div>
+
+
+
         <footer>
         <hr>
           &copy; 2018 | Paul Darr | CIT 261: Mobile Software Development | <a href="https://github.com/pauldarr/CIT261/">Github</a> | <a href="http://cit261.darr.org/teamproject/">Team Project</a>
