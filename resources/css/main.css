@@ -97,6 +97,11 @@ footer {
     padding: 5px 5px 5px 5px;
 }
 
+.content {
+    flex:1 90%;
+    padding: 5px 5px 5px 5px;
+}
+
 /* Responsive Body */
 
 @media all and (max-width: 766px) {
@@ -105,10 +110,8 @@ footer {
     flex-direction: column;
 }
 
-.left, .right, .center, .half {
+.left, .right, .center, .half, .content {
         
 /* Return them to document order */
     order: 0;
-}
-  
-}
+}   
